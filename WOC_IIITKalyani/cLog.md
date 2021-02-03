@@ -1,2 +1,3 @@
 Day 1: Figured out the libraries needed to be used and installed them. Faced some problem and fixed them.
 Day 2: In the continuation of taking baby steps, I learnt how to create python environment using anaconda as for some libraries different versions of python was needed. Read about face demarkation points which were needed. These were theoretical stuffs. 
+Day 3: Today I installed the Visual C++ and all the pre requisites needed for dlib module and then installed the dlib. These also went hand in hand installing various other libraries needed for image processing.
