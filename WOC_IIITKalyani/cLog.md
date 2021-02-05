@@ -1,4 +1,9 @@
-Day 1: Figured out the libraries needed to be used and installed them. Faced some problem and fixed them.
-Day 2: In the continuation of taking baby steps, I learnt how to create python environment using anaconda as for some libraries different versions of python was needed. Read about face demarkation points which were needed. These were theoretical stuffs. 
-Day 3: Today I installed the Visual C++ and all the pre requisites needed for dlib module and then installed the dlib. These also went hand in hand installing various other libraries needed for image processing. I also learnt to input image using openCV in Python. 
-Day 4: I learnt inputting and displaying images using python module OpenCV. Used functions like imread() and imshow() to take and display the image respectively. The input image's absolute path is to be entered by the user. The image was filled in the wghole window and didn't fit in it. So used the resize() function. Planned to work on those image the next days.  
+Day 1: Figured out the libraries needed to be used and installed them. Faced some problem and fixed them.  
+  
+Day 2: In the continuation of taking baby steps, I learnt how to create python environment using anaconda as for some libraries different versions of python was needed. Read about face demarkation points which were needed. These were theoretical stuffs.  
+  
+Day 3: Today I installed the Visual C++ and all the pre requisites needed for dlib module and then installed the dlib. These also went hand in hand installing various other libraries needed for image processing. I also learnt to input image using openCV in Python.  
+
+Day 4: I learnt inputting and displaying images using python module OpenCV. Used functions like imread() and imshow() to take and display the image respectively. The input image's absolute path is to be entered by the user. The image was filled in the whole window and didn't fit in it. So used the resize() function.  
+  
+Day 5: Inputted two images using the absolute path of that image. The processing on those images will be done using dlib and the goal is to exchange the face features of the images.  
