@@ -7,3 +7,5 @@ Day 3: Today I installed the Visual C++ and all the pre requisites needed for dl
 Day 4: I learnt inputting and displaying images using python module OpenCV. Used functions like imread() and imshow() to take and display the image respectively. The input image's absolute path is to be entered by the user. The image was filled in the whole window and didn't fit in it. So used the resize() function.  
   
 Day 5: Inputted two images using the absolute path of that image. The processing on those images will be done using dlib and the goal is to exchange the face features of the images.  
+  
+Day 7: Learnt usage and functionality of dlib and tried to identify 68 feature points of the face to know the features of face. Encountered several method calling errors which were partly resolved. 
