@@ -8,3 +8,8 @@ Python
 * numpy
 * time 
 #### This will be presented through aws. 
+# Student:  
+@aliasad20  
+# Mentor
+@lohithmunakala  
+
