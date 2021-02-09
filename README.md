@@ -7,9 +7,9 @@ Python
 * dlib
 * numpy
 * time 
-#### This will be presented through aws. 
+
 # Student:  
-@aliasad20  
+@aliasad20 (Me)  
 # Mentor
 @lohithmunakala  
 
