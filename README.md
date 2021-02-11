@@ -1,5 +1,5 @@
 # Face-Swap
-This is a project aiming to design a Face exchange application using Open-CV and dlib of Python.  
+This is a project aiming to design a Face exchange application between two inserted images using Open-CV and dlib of Python.  
 # Language Used  
 Python  
 # Libraries Used  
