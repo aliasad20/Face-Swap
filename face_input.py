@@ -33,6 +33,7 @@ for face in im1:
         fp = numpy.array(points, numpy.int32)
         ch = cv2.convexHull(fp)
 #example......
+
 #img_final = some processed swapped image
 # cv2.imshow("Desired Image",cv2.resize(img_final,(640,480))) image displayed like the inputted one but processed.
 #afterwards The End
