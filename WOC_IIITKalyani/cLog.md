@@ -12,4 +12,6 @@ Day 7: Learnt usage and functionality of dlib and tried to identify 68 feature p
   
 Day 8: The whole day passed in error only. So tried rectifying the error and also looked for methods of creating a flask app.  
   
-Day 9: Found and fixed the error which was just due to the wrong argument. Worked with the identification of feature points on the face. A .dat file was needed for this which I added. 
+Day 9: Found and fixed the error which was just due to the wrong argument. Worked with the identification of feature points on the face. A .dat file was needed for this which I added.  
+
+Day 10: Added 2nd face picture and joined the dots of facial features of the faces and now these are ready to be extracted.      
