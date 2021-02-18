@@ -16,4 +16,6 @@ Day 9: Found and fixed the error which was just due to the wrong argument. Worke
 
 Day 10: Added 2nd face picture and joined the dots of facial features of the faces and now these are ready to be extracted.  
   
-Day 11: Detected dots and features of second image and joined dot and extracted the dots.
+Day 11: Detected dots and features of second image and joined dot and extracted the dots.  
+  
+Day 12: Stored the joined dots as a form of triangles and extracted them to be pasted on the other image for swapping.

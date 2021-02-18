@@ -34,9 +34,37 @@ for face in im1:
         fp = numpy.array(points, numpy.int32)
         ch = cv2.convexHull(fp)
         cv2.circle(img1, center=(x, y), radius=6, color=(0, 255, 0), thickness=-1)
+#drawn circles and then going to join these
+        rectangle = cv2.boundingRect(ch)
+        divide_2d = cv2.Subdiv2D(rectangle)
+        divide_2d.insert(points)
+        triangles = divide_2d.getTriangleList()
+        split_triangle = numpy.array(triangles, dtype=numpy.int32)
+        cv2.fillConvexPoly(mask, ch, 255)
+        face_image_1 = cv2.bitwise_and(img1, img1, mask=mask)
+        face_points2 = numpy.array(points, numpy.int32)
+        ch2 = cv2.convexHull(face_points2)
+        def extract_index_nparray(nparray):
+            index = None
+            for num in nparray[0]:
+                index = num
+                break
+            return index
+            join_indexes = []
+            for edge in triangles:
+                first = (edge[0], edge[1])
+                second = (edge[2], edge[3])
+                third = (edge[4], edge[5])
+                index_edge1 = numpy.where((points == first).all(axis=1))
+                index_edge1 = extract_index_nparray(index_edge1)
+                index_edge2 = numpy.where((points == second).all(axis=1))
+                index_edge2 = extract_index_nparray(index_edge2)
+                index_edge3 = numpy.where((points == third).all(axis=1))
+                index_edge3 = extract_index_nparray(index_edge3)
+                if index_edge1 is not None and index_edge2 is not None and index_edge3 is not None:
+                    triangle = [index_edge1, index_edge2, index_edge3]
+                    join_indexes.append(triangle)    
 #2nd image
-ld = dlib.get_frontal_face_detector() #landmark detection
-predict = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 im2=ld(img2_gs)
 for face in im2:
     landmarks = predict(img2_gs, face)
@@ -47,7 +75,7 @@ for face in im2:
         points.append((x, y)) 
         fp = numpy.array(points, numpy.int32)
         ch = cv2.convexHull(fp)
-        cv2.circle(img1, center=(x, y), radius=6, color=(0, 255, 0), thickness=-1)
+        cv2.circle(img2, center=(x, y), radius=6, color=(255, 0, 0), thickness=-1)
 #example......
 cv2.imshow('Face 1',cv2.resize(img1, (640, 480)))
 cv2.waitKey(0) 
