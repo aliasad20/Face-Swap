@@ -50,20 +50,37 @@ for face in im1:
                 index = num
                 break
             return index
-            join_indexes = []
-            for edge in triangles:
-                first = (edge[0], edge[1])
-                second = (edge[2], edge[3])
-                third = (edge[4], edge[5])
-                index_edge1 = numpy.where((points == first).all(axis=1))
-                index_edge1 = extract_index_nparray(index_edge1)
-                index_edge2 = numpy.where((points == second).all(axis=1))
-                index_edge2 = extract_index_nparray(index_edge2)
-                index_edge3 = numpy.where((points == third).all(axis=1))
-                index_edge3 = extract_index_nparray(index_edge3)
-                if index_edge1 is not None and index_edge2 is not None and index_edge3 is not None:
-                    triangle = [index_edge1, index_edge2, index_edge3]
-                    join_indexes.append(triangle)    
+        join_indexes = []
+        for edge in triangles:
+            first = (edge[0], edge[1])
+            second = (edge[2], edge[3])
+            third = (edge[4], edge[5])
+            index_edge1 = numpy.where((points == first).all(axis=1))
+            index_edge1 = extract_index_nparray(index_edge1)
+            index_edge2 = numpy.where((points == second).all(axis=1))
+            index_edge2 = extract_index_nparray(index_edge2)
+            index_edge3 = numpy.where((points == third).all(axis=1))
+            index_edge3 = extract_index_nparray(index_edge3)
+            if index_edge1 is not None and index_edge2 is not None and index_edge3 is not None:
+                triangle = [index_edge1, index_edge2, index_edge3]
+                join_indexes.append(triangle)    
+        source_mask = numpy.zeros_like(img1_gs)
+        new_face = numpy.zeros_like(img2)
+        for index in triangles:
+            tri_one = points[index[0]]
+            tri_two = points[index[1]]
+            tri_three = points[index[2]]
+            triangle1 = numpy.array([tri_one, tri_two, tri_three], numpy.int32)
+            first_rect = cv2.boundingRect(triangle1)
+            (x, y, w, h) = first_rect
+            cropped_triangle = img1[y: y + h, x: x + w]
+            cropped_tr1_mask = numpy.zeros((h, w), numpy.uint8)
+            pts = numpy.array([[tri_one[0] - x, tri_one[1] - y],[tri_two[0] - x, tri_two[1] - y], [tri_three[0] - x, tri_three[1] - y]], numpy.int32)
+            cv2.fillConvexPoly(cropped_tr1_mask, pts, 255)
+            cv2.line(source_mask, tri_one, tri_two, 255)
+            cv2.line(source_mask, tri_two, tri_three, 255)
+            cv2.line(source_mask, tri_one, tri_three, 255)
+cv2.imshow('Test',cv2.resize(source_mask,(640,480)))
 #2nd image
 im2=ld(img2_gs)
 for face in im2:
