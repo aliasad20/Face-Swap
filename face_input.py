@@ -80,6 +80,7 @@ for face in im1:
             cv2.line(source_mask, tri_one, tri_two, 255)
             cv2.line(source_mask, tri_two, tri_three, 255)
             cv2.line(source_mask, tri_one, tri_three, 255)
+
 cv2.imshow('Test',cv2.resize(source_mask,(640,480)))
 #2nd image
 im2=ld(img2_gs)
