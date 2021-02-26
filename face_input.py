@@ -55,11 +55,11 @@ for face in im1:
             first = (edge[0], edge[1])
             second = (edge[2], edge[3])
             third = (edge[4], edge[5])
-            index_edge1 = numpy.where((points == first).all(axis=1))
+            index_edge1 = numpy.where(points == first)
             index_edge1 = extract_index_nparray(index_edge1)
-            index_edge2 = numpy.where((points == second).all(axis=1))
+            index_edge2 = numpy.where(points == second)
             index_edge2 = extract_index_nparray(index_edge2)
-            index_edge3 = numpy.where((points == third).all(axis=1))
+            index_edge3 = numpy.where(points == third)
             index_edge3 = extract_index_nparray(index_edge3)
             if index_edge1 is not None and index_edge2 is not None and index_edge3 is not None:
                 triangle = [index_edge1, index_edge2, index_edge3]
@@ -67,9 +67,9 @@ for face in im1:
         source_mask = numpy.zeros_like(img1_gs)
         new_face = numpy.zeros_like(img2)
         for index in triangles:
-            tri_one = points[index[0]]
-            tri_two = points[index[1]]
-            tri_three = points[index[2]]
+            tri_one = points[(int)(index[0])]
+            tri_two = points[(int)(index[1])]
+            tri_three = points[(int)(index[2])]
             triangle1 = numpy.array([tri_one, tri_two, tri_three], numpy.int32)
             first_rect = cv2.boundingRect(triangle1)
             (x, y, w, h) = first_rect
