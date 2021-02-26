@@ -13,27 +13,27 @@
 ## Day 5:  
 #### Inputted two images using the absolute path of that image. The processing on those images will be done using dlib and the goal is to exchange the face features of the images.  
   
-# Day 7:  
+## Day 7:  
 #### Learnt usage and functionality of dlib and tried to identify 68 feature points of the face to know the features of face. Encountered several method calling errors which were partly resolved.  
   
-# Day 8:  
+## Day 8:  
 #### The whole day passed in error only. So 13tried rectifying the error and also looked for methods of creating a flask app.  
   
-# Day 9:  
+## Day 9:  
 #### Found and fixed the error which was just due to the wrong argument. Worked with the identification of feature points on the face. A .dat file was needed for this which I added.  
 
-# Day 10:  
+## Day 10:  
 #### Added 2nd face picture and joined the dots of facial features of the faces and now these are ready to be extracted.  
   
-# Day 11:  
+## Day 11:  
 #### Detected dots and features of second image and joined dot and extracted the dots.  
   
-# Day 12:  
+## Day 12:  
 #### Stored the joined dots as a form of triangles and extracted them to be pasted on the other image for swapping.  
   
-# Day 13:  
+## Day 13:  
 #### Encountered various errors and problems today. Boolean error in numpy.where() function and dots joined started malfunctioning.  
   
-# Day 14:  
+## Day 14:  
 #### Tried plotting triabngles but again failed in it. Resolved various errors. Points extraction yet not possible.  
   
